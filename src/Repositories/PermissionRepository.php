@@ -2,11 +2,11 @@
 
 namespace Braxey\Gatekeeper\Repositories;
 
+use Braxey\Gatekeeper\Exceptions\PermissionAlreadyExistsException;
 use Braxey\Gatekeeper\Exceptions\PermissionNotFoundException;
 use Braxey\Gatekeeper\Models\Permission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ItemNotFoundException;
 use Throwable;
@@ -20,6 +20,10 @@ class PermissionRepository
      */
     public function create(string $permissionName): Permission
     {
+        if ($this->findByName($permissionName)) {
+            throw new PermissionAlreadyExistsException($permissionName);
+        }
+
         $permission = new Permission(['name' => $permissionName]);
 
         if ($permission->save()) {
@@ -50,7 +54,15 @@ class PermissionRepository
     /**
      * Find a permission by its name.
      */
-    public function findByName(string $permissionName): Permission
+    public function findByName(string $permissionName): ?Permission
+    {
+        return $this->all()->firstWhere('name', $permissionName);
+    }
+
+    /**
+     * Find a permission by its name, or fail.
+     */
+    public function findOrFailByName(string $permissionName): Permission
     {
         try {
             return $this->all()->where('name', $permissionName)->firstOrFail();

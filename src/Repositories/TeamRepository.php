@@ -2,11 +2,11 @@
 
 namespace Braxey\Gatekeeper\Repositories;
 
+use Braxey\Gatekeeper\Exceptions\TeamAlreadyExistsException;
 use Braxey\Gatekeeper\Exceptions\TeamNotFoundException;
 use Braxey\Gatekeeper\Models\Team;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ItemNotFoundException;
 use Throwable;
@@ -20,6 +20,10 @@ class TeamRepository
      */
     public function create(string $teamName): Team
     {
+        if ($this->findByName($teamName)) {
+            throw new TeamAlreadyExistsException($teamName);
+        }
+
         $team = new Team(['name' => $teamName]);
 
         if ($team->save()) {
@@ -50,7 +54,15 @@ class TeamRepository
     /**
      * Find a team by its name.
      */
-    public function findByName(string $teamName): Team
+    public function findByName(string $teamName): ?Team
+    {
+        return $this->all()->firstWhere('name', $teamName);
+    }
+
+    /**
+     * Find a team by its name, or fail.
+     */
+    public function findOrFailByName(string $teamName): Team
     {
         try {
             return $this->all()->where('name', $teamName)->firstOrFail();

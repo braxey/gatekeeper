@@ -47,7 +47,7 @@ class TeamService extends AbstractGatekeeperEntityService
         $this->enforceTeamInteraction($model);
 
         $teamName = $this->resolveEntityName($team);
-        $team = $this->teamRepository->findByName($teamName);
+        $team = $this->teamRepository->findOrFailByName($teamName);
 
         // If the model already has this team directly assigned, we don't need to sync again.
         $directlyOnTeam = $this->modelDirectlyOnTeam($model, $team);
@@ -95,7 +95,7 @@ class TeamService extends AbstractGatekeeperEntityService
         $this->enforceTeamInteraction($model);
 
         $teamName = $this->resolveEntityName($team);
-        $team = $this->teamRepository->findByName($teamName);
+        $team = $this->teamRepository->findOrFailByName($teamName);
 
         if ($this->modelHasTeamRepository->deleteForModelAndTeam($model, $team)) {
             // Audit log the team revocation if auditing is enabled.
@@ -135,7 +135,7 @@ class TeamService extends AbstractGatekeeperEntityService
         $this->enforceTeamInteraction($model);
 
         $teamName = $this->resolveEntityName($team);
-        $team = $this->teamRepository->findByName($teamName);
+        $team = $this->teamRepository->findOrFailByName($teamName);
 
         if (! $team->is_active) {
             return false;

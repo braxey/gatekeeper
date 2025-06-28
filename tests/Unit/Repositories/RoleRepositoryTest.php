@@ -2,6 +2,7 @@
 
 namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
 
+use Braxey\Gatekeeper\Exceptions\RoleAlreadyExistsException;
 use Braxey\Gatekeeper\Exceptions\RoleNotFoundException;
 use Braxey\Gatekeeper\Models\Role;
 use Braxey\Gatekeeper\Repositories\CacheRepository;
@@ -30,9 +31,8 @@ class RoleRepositoryTest extends TestCase
 
     public function test_create_role()
     {
-        $this->cacheRepository->shouldReceive('forget')
-            ->once()
-            ->with('roles');
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(collect());
+        $this->cacheRepository->shouldReceive('forget')->once()->with('roles');
 
         $name = fake()->unique()->word();
 
@@ -43,14 +43,22 @@ class RoleRepositoryTest extends TestCase
         $this->assertDatabaseHas('roles', ['name' => $name]);
     }
 
+    public function test_create_throws_if_role_exists()
+    {
+        $role = Role::factory()->create();
+
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(collect([$role]));
+
+        $this->expectException(RoleAlreadyExistsException::class);
+
+        $this->repository->create($role->name);
+    }
+
     public function test_all_returns_cached_roles_if_available()
     {
         $cached = Role::factory()->count(2)->make();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn($cached);
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn($cached);
 
         $result = $this->repository->all();
 
@@ -61,14 +69,10 @@ class RoleRepositoryTest extends TestCase
     {
         $roles = Role::factory()->count(2)->create();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn(null);
-
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(null);
         $this->cacheRepository->shouldReceive('put')
             ->once()
-            ->with('roles', \Mockery::on(fn ($arg) => $arg instanceof Collection && $arg->count() === 2));
+            ->with('roles', Mockery::on(fn ($arg) => $arg instanceof Collection && $arg->count() === 2));
 
         $result = $this->repository->all();
 
@@ -79,27 +83,29 @@ class RoleRepositoryTest extends TestCase
     {
         $role = Role::factory()->create();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn(collect([$role]));
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(collect([$role]));
 
         $result = $this->repository->findByName($role->name);
 
-        $this->assertInstanceOf(Role::class, $result);
-        $this->assertEquals($role->name, $result->name);
+        $this->assertTrue($role->is($result));
+    }
+
+    public function test_find_by_name_returns_null_when_missing()
+    {
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(collect());
+
+        $result = $this->repository->findByName('nonexistent');
+
+        $this->assertNull($result);
     }
 
     public function test_find_by_name_throws_if_not_found()
     {
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn(collect());
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn(collect());
 
         $this->expectException(RoleNotFoundException::class);
 
-        $this->repository->findByName('nonexistent');
+        $this->repository->findOrFailByName('nonexistent');
     }
 
     public function test_get_active_roles_filters_active()
@@ -108,10 +114,7 @@ class RoleRepositoryTest extends TestCase
         $inactive = Role::factory()->count(1)->create(['is_active' => false]);
         $all = $active->concat($inactive);
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn($all);
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn($all);
 
         $result = $this->repository->getActive();
 
@@ -123,10 +126,7 @@ class RoleRepositoryTest extends TestCase
     {
         $roles = Role::factory()->count(3)->create(['is_active' => true]);
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('roles')
-            ->andReturn($roles);
+        $this->cacheRepository->shouldReceive('get')->once()->with('roles')->andReturn($roles);
 
         $names = $roles->take(2)->pluck('name');
 

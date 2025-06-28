@@ -41,11 +41,11 @@
         "format": [
             "./vendor/bin/pint"
         ],
-        "test": [
-            "./vendor/bin/phpunit"
-        ],
         "check": [
             "./vendor/bin/phpstan analyse --memory-limit=2G"
+        ],
+        "test": [
+            "./vendor/bin/phpunit"
         ],
         "sweep": [
             "composer format",

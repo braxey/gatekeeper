@@ -2,6 +2,7 @@
 
 namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
 
+use Braxey\Gatekeeper\Exceptions\TeamAlreadyExistsException;
 use Braxey\Gatekeeper\Exceptions\TeamNotFoundException;
 use Braxey\Gatekeeper\Models\Team;
 use Braxey\Gatekeeper\Repositories\CacheRepository;
@@ -30,9 +31,8 @@ class TeamRepositoryTest extends TestCase
 
     public function test_create_team_and_cache_is_invalidated()
     {
-        $this->cacheRepository->shouldReceive('forget')
-            ->once()
-            ->with('teams');
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect());
+        $this->cacheRepository->shouldReceive('forget')->once()->with('teams');
 
         $team = $this->repository->create('engineering');
 
@@ -41,14 +41,22 @@ class TeamRepositoryTest extends TestCase
         $this->assertDatabaseHas('teams', ['name' => 'engineering']);
     }
 
+    public function test_create_throws_if_team_exists()
+    {
+        $existing = Team::factory()->create();
+
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect([$existing]));
+
+        $this->expectException(TeamAlreadyExistsException::class);
+
+        $this->repository->create($existing->name);
+    }
+
     public function test_all_returns_cached_teams()
     {
         $cached = Team::factory()->count(2)->make();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn($cached);
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn($cached);
 
         $teams = $this->repository->all();
 
@@ -60,11 +68,7 @@ class TeamRepositoryTest extends TestCase
     {
         $teams = Team::factory()->count(3)->create();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn(null);
-
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(null);
         $this->cacheRepository->shouldReceive('put')
             ->once()
             ->with('teams', \Mockery::on(fn ($arg) => $arg instanceof Collection && $arg->count() === 3));
@@ -78,26 +82,29 @@ class TeamRepositoryTest extends TestCase
     {
         $team = Team::factory()->create();
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn(collect([$team]));
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect([$team]));
 
-        $found = $this->repository->findByName($team->name);
+        $found = $this->repository->findOrFailByName($team->name);
 
         $this->assertTrue($found->is($team));
     }
 
+    public function test_find_by_name_returns_null_when_missing()
+    {
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect());
+
+        $result = $this->repository->findByName('nonexistent');
+
+        $this->assertNull($result);
+    }
+
     public function test_find_by_name_throws_if_not_found()
     {
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn(collect());
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect());
 
         $this->expectException(TeamNotFoundException::class);
 
-        $this->repository->findByName('nonexistent');
+        $this->repository->findOrFailByName('nonexistent');
     }
 
     public function test_find_by_name_bubbles_unexpected_exception()
@@ -109,7 +116,7 @@ class TeamRepositoryTest extends TestCase
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('whoops');
 
-        $mock->findByName('whatever');
+        $mock->findOrFailByName('whatever');
     }
 
     public function test_get_active_filters_correctly()
@@ -118,10 +125,7 @@ class TeamRepositoryTest extends TestCase
         $inactive = Team::factory()->inactive()->create();
         $all = collect([$active, $inactive]);
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn($all);
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn($all);
 
         $results = $this->repository->getActive();
 
@@ -135,10 +139,7 @@ class TeamRepositoryTest extends TestCase
         $t2 = Team::factory()->create(['name' => 'sales']);
         $t3 = Team::factory()->create(['name' => 'marketing']);
 
-        $this->cacheRepository->shouldReceive('get')
-            ->once()
-            ->with('teams')
-            ->andReturn(collect([$t1, $t2, $t3]));
+        $this->cacheRepository->shouldReceive('get')->once()->with('teams')->andReturn(collect([$t1, $t2, $t3]));
 
         $results = $this->repository->getActiveWhereNameIn(['sales', 'marketing']);
 
@@ -188,9 +189,7 @@ class TeamRepositoryTest extends TestCase
 
         $cacheKey = "teams.{$user->getMorphClass()}.{$user->getKey()}";
 
-        $this->cacheRepository->shouldReceive('forget')
-            ->once()
-            ->with($cacheKey);
+        $this->cacheRepository->shouldReceive('forget')->once()->with($cacheKey);
 
         $this->repository->invalidateCacheForModel($user);
     }

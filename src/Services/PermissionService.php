@@ -51,7 +51,7 @@ class PermissionService extends AbstractGatekeeperEntityService
         $this->enforcePermissionInteraction($model);
 
         $permissionName = $this->resolveEntityName($permission);
-        $permission = $this->permissionRepository->findByName($permissionName);
+        $permission = $this->permissionRepository->findOrFailByName($permissionName);
 
         // If the model already has this permission directly assigned, we don't need to sync again.
         if ($this->modelDirectlyHasPermission($model, $permission)) {
@@ -96,7 +96,7 @@ class PermissionService extends AbstractGatekeeperEntityService
         $this->enforcePermissionInteraction($model);
 
         $permissionName = $this->resolveEntityName($permission);
-        $permission = $this->permissionRepository->findByName($permissionName);
+        $permission = $this->permissionRepository->findOrFailByName($permissionName);
 
         if ($this->modelHasPermissionRepository->deleteForModelAndPermission($model, $permission)) {
             // Audit log the permission revocation if auditing is enabled.
@@ -135,7 +135,7 @@ class PermissionService extends AbstractGatekeeperEntityService
         $this->enforcePermissionInteraction($model);
 
         $permissionName = $this->resolveEntityName($permission);
-        $permission = $this->permissionRepository->findByName($permissionName);
+        $permission = $this->permissionRepository->findOrFailByName($permissionName);
 
         // If the permission is not active, we can immediately return false.
         if (! $permission->is_active) {

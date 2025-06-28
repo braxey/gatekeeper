@@ -50,7 +50,7 @@ class RoleService extends AbstractGatekeeperEntityService
         $this->enforceRoleInteraction($model);
 
         $roleName = $this->resolveEntityName($role);
-        $role = $this->roleRepository->findByName($roleName);
+        $role = $this->roleRepository->findOrFailByName($roleName);
 
         // If the model already has this role directly assigned, we don't need to sync again.
         if ($this->modelDirectlyHasRole($model, $role)) {
@@ -96,7 +96,7 @@ class RoleService extends AbstractGatekeeperEntityService
         $this->enforceRoleInteraction($model);
 
         $roleName = $this->resolveEntityName($role);
-        $role = $this->roleRepository->findByName($roleName);
+        $role = $this->roleRepository->findOrFailByName($roleName);
 
         if ($this->modelHasRoleRepository->deleteForModelAndRole($model, $role)) {
             // Audit log the role revocation if auditing is enabled.
@@ -136,7 +136,7 @@ class RoleService extends AbstractGatekeeperEntityService
         $this->enforceRoleInteraction($model);
 
         $roleName = $this->resolveEntityName($role);
-        $role = $this->roleRepository->findByName($roleName);
+        $role = $this->roleRepository->findOrFailByName($roleName);
 
         // If the role is not active, we can immediately return false.
         if (! $role->is_active) {

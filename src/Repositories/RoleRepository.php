@@ -2,11 +2,11 @@
 
 namespace Braxey\Gatekeeper\Repositories;
 
+use Braxey\Gatekeeper\Exceptions\RoleAlreadyExistsException;
 use Braxey\Gatekeeper\Exceptions\RoleNotFoundException;
 use Braxey\Gatekeeper\Models\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ItemNotFoundException;
 use Throwable;
@@ -20,6 +20,10 @@ class RoleRepository
      */
     public function create(string $roleName): Role
     {
+        if ($this->findByName($roleName)) {
+            throw new RoleAlreadyExistsException($roleName);
+        }
+
         $role = new Role(['name' => $roleName]);
 
         if ($role->save()) {
@@ -50,7 +54,15 @@ class RoleRepository
     /**
      * Find a role by its name.
      */
-    public function findByName(string $roleName): Role
+    public function findByName(string $roleName): ?Role
+    {
+        return $this->all()->firstWhere('name', $roleName);
+    }
+
+    /**
+     * Find a role by its name, or fail.
+     */
+    public function findOrFailByName(string $roleName): Role
     {
         try {
             return $this->all()->where('name', $roleName)->firstOrFail();
