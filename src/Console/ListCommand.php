@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Console;
+namespace Gillyware\Gatekeeper\Console;
 
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
 use Illuminate\Console\Command;
 
 class ListCommand extends Command

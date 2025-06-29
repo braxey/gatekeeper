@@ -1,15 +1,15 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Services;
+namespace Gillyware\Gatekeeper\Tests\Unit\Services;
 
-use Braxey\Gatekeeper\Exceptions\RolesFeatureDisabledException;
-use Braxey\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Services\GatekeeperService;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Exceptions\RolesFeatureDisabledException;
+use Gillyware\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Services\GatekeeperService;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class GatekeeperServiceTest extends TestCase

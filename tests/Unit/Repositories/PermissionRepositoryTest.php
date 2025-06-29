@@ -1,14 +1,14 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\PermissionAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\PermissionNotFoundException;
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Repositories\CacheRepository;
-use Braxey\Gatekeeper\Repositories\PermissionRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Exceptions\PermissionAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\PermissionNotFoundException;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Repositories\CacheRepository;
+use Gillyware\Gatekeeper\Repositories\PermissionRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Mockery;
 use Mockery\MockInterface;
 use RuntimeException;

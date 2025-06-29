@@ -1,12 +1,12 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Models\ModelHasPermission;
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Repositories\ModelHasPermissionRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Models\ModelHasPermission;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Repositories\ModelHasPermissionRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class ModelHasPermissionRepositoryTest extends TestCase

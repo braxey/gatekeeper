@@ -1,16 +1,16 @@
 <?php
 
-namespace Braxey\Gatekeeper\Services;
+namespace Gillyware\Gatekeeper\Services;
 
-use Braxey\Gatekeeper\Dtos\AuditLog\AssignRoleAuditLogDto;
-use Braxey\Gatekeeper\Dtos\AuditLog\CreateRoleAuditLogDto;
-use Braxey\Gatekeeper\Dtos\AuditLog\RevokeRoleAuditLogDto;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Repositories\AuditLogRepository;
-use Braxey\Gatekeeper\Repositories\ModelHasRoleRepository;
-use Braxey\Gatekeeper\Repositories\RoleRepository;
-use Braxey\Gatekeeper\Repositories\TeamRepository;
+use Gillyware\Gatekeeper\Dtos\AuditLog\AssignRoleAuditLogDto;
+use Gillyware\Gatekeeper\Dtos\AuditLog\CreateRoleAuditLogDto;
+use Gillyware\Gatekeeper\Dtos\AuditLog\RevokeRoleAuditLogDto;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Repositories\AuditLogRepository;
+use Gillyware\Gatekeeper\Repositories\ModelHasRoleRepository;
+use Gillyware\Gatekeeper\Repositories\RoleRepository;
+use Gillyware\Gatekeeper\Repositories\TeamRepository;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;

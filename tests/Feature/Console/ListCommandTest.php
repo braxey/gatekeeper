@@ -1,11 +1,11 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Feature\Console;
+namespace Gillyware\Gatekeeper\Tests\Feature\Console;
 
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Tests\TestCase;
 
 class ListCommandTest extends TestCase
 {

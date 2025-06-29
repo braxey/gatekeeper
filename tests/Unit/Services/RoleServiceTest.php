@@ -1,17 +1,17 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Services;
+namespace Gillyware\Gatekeeper\Tests\Unit\Services;
 
-use Braxey\Gatekeeper\Constants\AuditLog\Action;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithRolesException;
-use Braxey\Gatekeeper\Exceptions\RolesFeatureDisabledException;
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\AuditLog;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Services\RoleService;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Constants\AuditLog\Action;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithRolesException;
+use Gillyware\Gatekeeper\Exceptions\RolesFeatureDisabledException;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\AuditLog;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Services\RoleService;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class RoleServiceTest extends TestCase

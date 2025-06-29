@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Models\ModelHasPermission;
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\ModelHasPermission;
+use Gillyware\Gatekeeper\Models\Permission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 

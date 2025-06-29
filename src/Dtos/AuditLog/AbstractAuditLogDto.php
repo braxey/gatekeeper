@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Dtos\AuditLog;
+namespace Gillyware\Gatekeeper\Dtos\AuditLog;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractAuditLogDto

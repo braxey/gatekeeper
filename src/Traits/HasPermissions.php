@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Traits;
+namespace Gillyware\Gatekeeper\Traits;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\Permission;
 use Illuminate\Contracts\Support\Arrayable;
 
 trait HasPermissions

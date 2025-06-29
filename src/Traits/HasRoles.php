@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Traits;
+namespace Gillyware\Gatekeeper\Traits;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\Role;
 use Illuminate\Contracts\Support\Arrayable;
 
 trait HasRoles

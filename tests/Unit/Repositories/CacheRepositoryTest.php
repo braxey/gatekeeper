@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Repositories\CacheRepository;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Repositories\CacheRepository;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 

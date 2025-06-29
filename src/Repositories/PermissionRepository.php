@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\PermissionAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\PermissionNotFoundException;
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Exceptions\PermissionAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\PermissionNotFoundException;
+use Gillyware\Gatekeeper\Models\Permission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;

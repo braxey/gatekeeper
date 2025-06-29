@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Models\ModelHasTeam;
-use Braxey\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Models\ModelHasTeam;
+use Gillyware\Gatekeeper\Models\Team;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 

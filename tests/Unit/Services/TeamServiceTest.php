@@ -1,16 +1,16 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Services;
+namespace Gillyware\Gatekeeper\Tests\Unit\Services;
 
-use Braxey\Gatekeeper\Constants\AuditLog\Action;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithTeamsException;
-use Braxey\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\AuditLog;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Services\TeamService;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Constants\AuditLog\Action;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithTeamsException;
+use Gillyware\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\AuditLog;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Services\TeamService;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class TeamServiceTest extends TestCase

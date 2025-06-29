@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Dtos\AuditLog\AbstractAuditLogDto;
-use Braxey\Gatekeeper\Models\AuditLog;
+use Gillyware\Gatekeeper\Dtos\AuditLog\AbstractAuditLogDto;
+use Gillyware\Gatekeeper\Models\AuditLog;
 
 class AuditLogRepository
 {

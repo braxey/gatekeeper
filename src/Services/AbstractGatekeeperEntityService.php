@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Services;
+namespace Gillyware\Gatekeeper\Services;
 
-use Braxey\Gatekeeper\Models\AbstractGatekeeperEntity;
-use Braxey\Gatekeeper\Traits\EnforcesForGatekeeper;
+use Gillyware\Gatekeeper\Models\AbstractGatekeeperEntity;
+use Gillyware\Gatekeeper\Traits\EnforcesForGatekeeper;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;
 use InvalidArgumentException;

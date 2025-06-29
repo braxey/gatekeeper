@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Database\Seeders;
+namespace Gillyware\Gatekeeper\Database\Seeders;
 
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Permission;
 use Illuminate\Database\Seeder;
 
 class GatekeeperPermissionsSeeder extends Seeder

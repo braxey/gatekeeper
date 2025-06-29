@@ -1,5 +1,5 @@
 {
-    "name": "braxey/gatekeeper",
+    "name": "gillyware/gatekeeper",
     "description": "Gatekeeper provides an expressive, fluent interface for access control.",
     "license": "MIT",
     "authors": [
@@ -27,14 +27,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Braxey\\Gatekeeper\\": "src/",
-            "Braxey\\Gatekeeper\\Database\\Factories\\": "database/factories/",
-            "Braxey\\Gatekeeper\\Database\\Seeders\\": "database/seeders/"
+            "Gillyware\\Gatekeeper\\": "src/",
+            "Gillyware\\Gatekeeper\\Database\\Factories\\": "database/factories/",
+            "Gillyware\\Gatekeeper\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Braxey\\Gatekeeper\\Tests\\": "tests/"
+            "Gillyware\\Gatekeeper\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -59,7 +59,7 @@
         },
         "laravel": {
             "providers": [
-                "Braxey\\Gatekeeper\\GatekeeperServiceProvider"
+                "Gillyware\\Gatekeeper\\GatekeeperServiceProvider"
             ]
         }
     },

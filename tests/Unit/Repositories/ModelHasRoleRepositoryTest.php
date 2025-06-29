@@ -1,12 +1,12 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Models\ModelHasRole;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Repositories\ModelHasRoleRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Models\ModelHasRole;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Repositories\ModelHasRoleRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class ModelHasRoleRepositoryTest extends TestCase

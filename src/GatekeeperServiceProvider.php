@@ -1,11 +1,11 @@
 <?php
 
-namespace Braxey\Gatekeeper;
+namespace Gillyware\Gatekeeper;
 
-use Braxey\Gatekeeper\Services\GatekeeperService;
-use Braxey\Gatekeeper\Services\PermissionService;
-use Braxey\Gatekeeper\Services\RoleService;
-use Braxey\Gatekeeper\Services\TeamService;
+use Gillyware\Gatekeeper\Services\GatekeeperService;
+use Gillyware\Gatekeeper\Services\PermissionService;
+use Gillyware\Gatekeeper\Services\RoleService;
+use Gillyware\Gatekeeper\Services\TeamService;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -167,17 +167,17 @@ class GatekeeperServiceProvider extends ServiceProvider
     {
         $router = $this->app->make('router');
 
-        $router->aliasMiddleware('has_permission', \Braxey\Gatekeeper\Http\Middleware\HasPermission::class);
-        $router->aliasMiddleware('has_role', \Braxey\Gatekeeper\Http\Middleware\HasRole::class);
-        $router->aliasMiddleware('on_team', \Braxey\Gatekeeper\Http\Middleware\OnTeam::class);
+        $router->aliasMiddleware('has_permission', \Gillyware\Gatekeeper\Http\Middleware\HasPermission::class);
+        $router->aliasMiddleware('has_role', \Gillyware\Gatekeeper\Http\Middleware\HasRole::class);
+        $router->aliasMiddleware('on_team', \Gillyware\Gatekeeper\Http\Middleware\OnTeam::class);
 
-        $router->aliasMiddleware('has_any_permission', \Braxey\Gatekeeper\Http\Middleware\HasAnyPermission::class);
-        $router->aliasMiddleware('has_any_role', \Braxey\Gatekeeper\Http\Middleware\HasAnyRole::class);
-        $router->aliasMiddleware('on_any_team', \Braxey\Gatekeeper\Http\Middleware\OnAnyTeam::class);
+        $router->aliasMiddleware('has_any_permission', \Gillyware\Gatekeeper\Http\Middleware\HasAnyPermission::class);
+        $router->aliasMiddleware('has_any_role', \Gillyware\Gatekeeper\Http\Middleware\HasAnyRole::class);
+        $router->aliasMiddleware('on_any_team', \Gillyware\Gatekeeper\Http\Middleware\OnAnyTeam::class);
 
-        $router->aliasMiddleware('has_all_permissions', \Braxey\Gatekeeper\Http\Middleware\HasAllPermissions::class);
-        $router->aliasMiddleware('has_all_roles', \Braxey\Gatekeeper\Http\Middleware\HasAllRoles::class);
-        $router->aliasMiddleware('on_all_teams', \Braxey\Gatekeeper\Http\Middleware\OnAllTeams::class);
+        $router->aliasMiddleware('has_all_permissions', \Gillyware\Gatekeeper\Http\Middleware\HasAllPermissions::class);
+        $router->aliasMiddleware('has_all_roles', \Gillyware\Gatekeeper\Http\Middleware\HasAllRoles::class);
+        $router->aliasMiddleware('on_all_teams', \Gillyware\Gatekeeper\Http\Middleware\OnAllTeams::class);
     }
 
     /**
@@ -192,13 +192,13 @@ class GatekeeperServiceProvider extends ServiceProvider
         }
 
         $this->commands([
-            \Braxey\Gatekeeper\Console\CreatePermissionCommand::class,
-            \Braxey\Gatekeeper\Console\CreateRoleCommand::class,
-            \Braxey\Gatekeeper\Console\CreateTeamCommand::class,
-            \Braxey\Gatekeeper\Console\ListCommand::class,
-            \Braxey\Gatekeeper\Console\RevokeCommand::class,
-            \Braxey\Gatekeeper\Console\AssignCommand::class,
-            \Braxey\Gatekeeper\Console\ClearCacheCommand::class,
+            \Gillyware\Gatekeeper\Console\CreatePermissionCommand::class,
+            \Gillyware\Gatekeeper\Console\CreateRoleCommand::class,
+            \Gillyware\Gatekeeper\Console\CreateTeamCommand::class,
+            \Gillyware\Gatekeeper\Console\ListCommand::class,
+            \Gillyware\Gatekeeper\Console\RevokeCommand::class,
+            \Gillyware\Gatekeeper\Console\AssignCommand::class,
+            \Gillyware\Gatekeeper\Console\ClearCacheCommand::class,
         ]);
     }
 }

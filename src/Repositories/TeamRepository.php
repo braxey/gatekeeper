@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\TeamAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\TeamNotFoundException;
-use Braxey\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Exceptions\TeamAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\TeamNotFoundException;
+use Gillyware\Gatekeeper\Models\Team;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;

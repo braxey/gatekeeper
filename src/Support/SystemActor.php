@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Support;
+namespace Gillyware\Gatekeeper\Support;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,17 +1,17 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Services;
+namespace Gillyware\Gatekeeper\Tests\Unit\Services;
 
-use Braxey\Gatekeeper\Constants\AuditLog\Action;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithPermissionsException;
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\AuditLog;
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Services\PermissionService;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Constants\AuditLog\Action;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithPermissionsException;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\AuditLog;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Services\PermissionService;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class PermissionServiceTest extends TestCase

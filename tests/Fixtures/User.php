@@ -1,11 +1,11 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Fixtures;
+namespace Gillyware\Gatekeeper\Tests\Fixtures;
 
-use Braxey\Gatekeeper\Database\Factories\UserFactory;
-use Braxey\Gatekeeper\Traits\HasPermissions;
-use Braxey\Gatekeeper\Traits\HasRoles;
-use Braxey\Gatekeeper\Traits\HasTeams;
+use Gillyware\Gatekeeper\Database\Factories\UserFactory;
+use Gillyware\Gatekeeper\Traits\HasPermissions;
+use Gillyware\Gatekeeper\Traits\HasRoles;
+use Gillyware\Gatekeeper\Traits\HasTeams;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Model;
 

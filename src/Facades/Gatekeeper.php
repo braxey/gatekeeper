@@ -1,11 +1,11 @@
 <?php
 
-namespace Braxey\Gatekeeper\Facades;
+namespace Gillyware\Gatekeeper\Facades;
 
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Services\GatekeeperService;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Services\GatekeeperService;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Facade;
@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool modelOnAnyTeam(Model $model, array|Arrayable $teams)
  * @method static bool modelOnAllTeams(Model $model, array|Arrayable $teams)
  *
- * @see \Braxey\Gatekeeper\Services\GatekeeperService
+ * @see \Gillyware\Gatekeeper\Services\GatekeeperService
  */
 class Gatekeeper extends Facade
 {

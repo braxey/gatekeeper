@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Traits;
+namespace Gillyware\Gatekeeper\Traits;
 
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Repositories\PermissionRepository;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Repositories\PermissionRepository;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;

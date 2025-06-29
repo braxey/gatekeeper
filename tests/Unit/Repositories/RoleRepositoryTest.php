@@ -1,14 +1,14 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\RoleAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\RoleNotFoundException;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Repositories\CacheRepository;
-use Braxey\Gatekeeper\Repositories\RoleRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Exceptions\RoleAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\RoleNotFoundException;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Repositories\CacheRepository;
+use Gillyware\Gatekeeper\Repositories\RoleRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Collection;
 use Mockery;
 use Mockery\MockInterface;

@@ -1,14 +1,14 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\TeamAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\TeamNotFoundException;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Repositories\CacheRepository;
-use Braxey\Gatekeeper\Repositories\TeamRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Exceptions\TeamAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\TeamNotFoundException;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Repositories\CacheRepository;
+use Gillyware\Gatekeeper\Repositories\TeamRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Collection;
 use Mockery;
 use Mockery\MockInterface;

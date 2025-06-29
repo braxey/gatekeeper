@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests;
+namespace Gillyware\Gatekeeper\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\Concerns\WithWorkbench;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Console;
+namespace Gillyware\Gatekeeper\Console;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Support\SystemActor;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Support\SystemActor;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 

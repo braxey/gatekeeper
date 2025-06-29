@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Dtos\AuditLog;
+namespace Gillyware\Gatekeeper\Dtos\AuditLog;
 
-use Braxey\Gatekeeper\Constants\AuditLog\Action;
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Constants\AuditLog\Action;
+use Gillyware\Gatekeeper\Models\Permission;
 
 class CreatePermissionAuditLogDto extends AbstractAuditLogDto
 {

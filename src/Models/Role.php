@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Models;
+namespace Gillyware\Gatekeeper\Models;
 
-use Braxey\Gatekeeper\Database\Factories\RoleFactory;
-use Braxey\Gatekeeper\Traits\HasPermissions;
+use Gillyware\Gatekeeper\Database\Factories\RoleFactory;
+use Gillyware\Gatekeeper\Traits\HasPermissions;
 use Illuminate\Support\Facades\Config;
 
 class Role extends AbstractGatekeeperEntity

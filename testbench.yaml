@@ -1,5 +1,5 @@
 providers:
-  - Braxey\Gatekeeper\GatekeeperServiceProvider
+  - Gillyware\Gatekeeper\GatekeeperServiceProvider
 
 migrations:
   - database/migrations

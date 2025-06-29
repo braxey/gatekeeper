@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Database\Factories;
+namespace Gillyware\Gatekeeper\Database\Factories;
 
-use Braxey\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

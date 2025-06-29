@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Traits;
+namespace Gillyware\Gatekeeper\Tests\Unit\Traits;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Facade;
 
 class HasRolesTest extends TestCase

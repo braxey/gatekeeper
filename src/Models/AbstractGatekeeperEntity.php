@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Models;
+namespace Gillyware\Gatekeeper\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

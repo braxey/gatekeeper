@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Feature\Console;
+namespace Gillyware\Gatekeeper\Tests\Feature\Console;
 
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 

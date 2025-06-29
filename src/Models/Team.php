@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Models;
+namespace Gillyware\Gatekeeper\Models;
 
-use Braxey\Gatekeeper\Database\Factories\TeamFactory;
-use Braxey\Gatekeeper\Traits\HasPermissions;
-use Braxey\Gatekeeper\Traits\HasRoles;
+use Gillyware\Gatekeeper\Database\Factories\TeamFactory;
+use Gillyware\Gatekeeper\Traits\HasPermissions;
+use Gillyware\Gatekeeper\Traits\HasRoles;
 use Illuminate\Support\Facades\Config;
 
 class Team extends AbstractGatekeeperEntity

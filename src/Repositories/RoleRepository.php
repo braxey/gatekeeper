@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
-use Braxey\Gatekeeper\Exceptions\RoleAlreadyExistsException;
-use Braxey\Gatekeeper\Exceptions\RoleNotFoundException;
-use Braxey\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Exceptions\RoleAlreadyExistsException;
+use Gillyware\Gatekeeper\Exceptions\RoleNotFoundException;
+use Gillyware\Gatekeeper\Models\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;

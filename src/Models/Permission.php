@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Models;
+namespace Gillyware\Gatekeeper\Models;
 
-use Braxey\Gatekeeper\Database\Factories\PermissionFactory;
+use Gillyware\Gatekeeper\Database\Factories\PermissionFactory;
 use Illuminate\Support\Facades\Config;
 
 class Permission extends AbstractGatekeeperEntity

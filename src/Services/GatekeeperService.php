@@ -1,12 +1,12 @@
 <?php
 
-namespace Braxey\Gatekeeper\Services;
+namespace Gillyware\Gatekeeper\Services;
 
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Support\SystemActor;
-use Braxey\Gatekeeper\Traits\ActsForGatekeeper;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Support\SystemActor;
+use Gillyware\Gatekeeper\Traits\ActsForGatekeeper;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;

@@ -1,18 +1,18 @@
 <?php
 
-namespace Braxey\Gatekeeper\Services;
+namespace Gillyware\Gatekeeper\Services;
 
-use Braxey\Gatekeeper\Dtos\AuditLog\AssignPermissionAuditLogDto;
-use Braxey\Gatekeeper\Dtos\AuditLog\CreatePermissionAuditLogDto;
-use Braxey\Gatekeeper\Dtos\AuditLog\RevokePermissionAuditLogDto;
-use Braxey\Gatekeeper\Models\Permission;
-use Braxey\Gatekeeper\Models\Role;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Repositories\AuditLogRepository;
-use Braxey\Gatekeeper\Repositories\ModelHasPermissionRepository;
-use Braxey\Gatekeeper\Repositories\PermissionRepository;
-use Braxey\Gatekeeper\Repositories\RoleRepository;
-use Braxey\Gatekeeper\Repositories\TeamRepository;
+use Gillyware\Gatekeeper\Dtos\AuditLog\AssignPermissionAuditLogDto;
+use Gillyware\Gatekeeper\Dtos\AuditLog\CreatePermissionAuditLogDto;
+use Gillyware\Gatekeeper\Dtos\AuditLog\RevokePermissionAuditLogDto;
+use Gillyware\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Models\Role;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Repositories\AuditLogRepository;
+use Gillyware\Gatekeeper\Repositories\ModelHasPermissionRepository;
+use Gillyware\Gatekeeper\Repositories\PermissionRepository;
+use Gillyware\Gatekeeper\Repositories\RoleRepository;
+use Gillyware\Gatekeeper\Repositories\TeamRepository;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;

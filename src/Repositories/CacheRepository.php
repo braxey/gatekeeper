@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Repositories;
+namespace Gillyware\Gatekeeper\Repositories;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;

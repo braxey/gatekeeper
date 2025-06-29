@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Exceptions;
+namespace Gillyware\Gatekeeper\Exceptions;
 
 class MissingActingAsModelException extends \Exception
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Exceptions;
+namespace Gillyware\Gatekeeper\Exceptions;
 
 class ModelDoesNotInteractWithPermissionsException extends \Exception
 {
@@ -9,6 +9,6 @@ class ModelDoesNotInteractWithPermissionsException extends \Exception
      */
     public function __construct(string $modelClass)
     {
-        parent::__construct("The model class [{$modelClass}] does not interact with permissions. Consider using the `Braxey\Gatekeeper\Traits\HasPermissions` trait in your model.");
+        parent::__construct("The model class [{$modelClass}] does not interact with permissions. Consider using the `Gillyware\Gatekeeper\Traits\HasPermissions` trait in your model.");
     }
 }

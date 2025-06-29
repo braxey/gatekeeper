@@ -1,12 +1,12 @@
 <?php
 
-namespace Braxey\Gatekeeper\Tests\Unit\Repositories;
+namespace Gillyware\Gatekeeper\Tests\Unit\Repositories;
 
-use Braxey\Gatekeeper\Models\ModelHasTeam;
-use Braxey\Gatekeeper\Models\Team;
-use Braxey\Gatekeeper\Repositories\ModelHasTeamRepository;
-use Braxey\Gatekeeper\Tests\Fixtures\User;
-use Braxey\Gatekeeper\Tests\TestCase;
+use Gillyware\Gatekeeper\Models\ModelHasTeam;
+use Gillyware\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Repositories\ModelHasTeamRepository;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 
 class ModelHasTeamRepositoryTest extends TestCase

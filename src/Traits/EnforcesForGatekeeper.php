@@ -1,13 +1,13 @@
 <?php
 
-namespace Braxey\Gatekeeper\Traits;
+namespace Gillyware\Gatekeeper\Traits;
 
-use Braxey\Gatekeeper\Exceptions\MissingActingAsModelException;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithPermissionsException;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithRolesException;
-use Braxey\Gatekeeper\Exceptions\ModelDoesNotInteractWithTeamsException;
-use Braxey\Gatekeeper\Exceptions\RolesFeatureDisabledException;
-use Braxey\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
+use Gillyware\Gatekeeper\Exceptions\MissingActingAsModelException;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithPermissionsException;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithRolesException;
+use Gillyware\Gatekeeper\Exceptions\ModelDoesNotInteractWithTeamsException;
+use Gillyware\Gatekeeper\Exceptions\RolesFeatureDisabledException;
+use Gillyware\Gatekeeper\Exceptions\TeamsFeatureDisabledException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 

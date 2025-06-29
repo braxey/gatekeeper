@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Console;
+namespace Gillyware\Gatekeeper\Console;
 
-use Braxey\Gatekeeper\Repositories\CacheRepository;
+use Gillyware\Gatekeeper\Repositories\CacheRepository;
 use Illuminate\Console\Command;
 
 class ClearCacheCommand extends Command

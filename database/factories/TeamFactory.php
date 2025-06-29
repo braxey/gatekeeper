@@ -1,8 +1,8 @@
 <?php
 
-namespace Braxey\Gatekeeper\Database\Factories;
+namespace Gillyware\Gatekeeper\Database\Factories;
 
-use Braxey\Gatekeeper\Models\Team;
+use Gillyware\Gatekeeper\Models\Team;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

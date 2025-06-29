@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Exceptions;
+namespace Gillyware\Gatekeeper\Exceptions;
 
 class ModelDoesNotInteractWithTeamsException extends \Exception
 {
@@ -9,6 +9,6 @@ class ModelDoesNotInteractWithTeamsException extends \Exception
      */
     public function __construct(string $modelClass)
     {
-        parent::__construct("The model class [{$modelClass}] does not interact with teams. Consider using the `Braxey\Gatekeeper\Traits\HasTeams` trait in your model.");
+        parent::__construct("The model class [{$modelClass}] does not interact with teams. Consider using the `Gillyware\Gatekeeper\Traits\HasTeams` trait in your model.");
     }
 }

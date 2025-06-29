@@ -1,14 +1,14 @@
 <?php
 
-namespace Braxey\Gatekeeper\Database\Factories;
+namespace Gillyware\Gatekeeper\Database\Factories;
 
-use Braxey\Gatekeeper\Tests\Fixtures\User;
+use Gillyware\Gatekeeper\Tests\Fixtures\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Braxey\Gatekeeper\Tests\Fixtures\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Gillyware\Gatekeeper\Tests\Fixtures\User>
  */
 class UserFactory extends Factory
 {

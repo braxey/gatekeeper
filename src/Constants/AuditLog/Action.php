@@ -1,6 +1,6 @@
 <?php
 
-namespace Braxey\Gatekeeper\Constants\AuditLog;
+namespace Gillyware\Gatekeeper\Constants\AuditLog;
 
 class Action
 {

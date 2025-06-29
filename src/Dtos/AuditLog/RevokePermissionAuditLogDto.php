@@ -1,10 +1,10 @@
 <?php
 
-namespace Braxey\Gatekeeper\Dtos\AuditLog;
+namespace Gillyware\Gatekeeper\Dtos\AuditLog;
 
-use Braxey\Gatekeeper\Constants\AuditLog\Action;
-use Braxey\Gatekeeper\Facades\Gatekeeper;
-use Braxey\Gatekeeper\Models\Permission;
+use Gillyware\Gatekeeper\Constants\AuditLog\Action;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
+use Gillyware\Gatekeeper\Models\Permission;
 use Illuminate\Database\Eloquent\Model;
 
 class RevokePermissionAuditLogDto extends AbstractAuditLogDto

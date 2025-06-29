@@ -1,9 +1,9 @@
 <?php
 
-namespace Braxey\Gatekeeper\Http\Middleware;
+namespace Gillyware\Gatekeeper\Http\Middleware;
 
-use Braxey\Gatekeeper\Facades\Gatekeeper;
 use Closure;
+use Gillyware\Gatekeeper\Facades\Gatekeeper;
 use Illuminate\Http\Request;
 
 class HasAllPermissions
